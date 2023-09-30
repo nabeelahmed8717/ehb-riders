@@ -1,0 +1,14 @@
+.orders-req-main{
+    .order-filters{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        align-items: center;
+        gap: 10px;
+        button{
+            box-shadow: none !important;
+        }
+    }
+}

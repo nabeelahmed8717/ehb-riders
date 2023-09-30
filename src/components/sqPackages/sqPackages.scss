@@ -1,0 +1,84 @@
+.packages-main-wrapper {
+    .head-packages {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 39px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .wrapper-packages-inner {
+        margin-top: 30px;
+
+        .wrapper-package-bbx {
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            // height: 300px;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+            .icon-wrapper {
+                background-color: #6cb9ff2b;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h3 {
+                margin-top: 19px;
+                font-size: 22px;
+                font-weight: 800;
+            }
+
+            p {
+                color: #6d6d6d;
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    color: rgb(3, 3, 3);
+                }
+            }
+
+            h4 {
+                margin-top: 20px;
+                font-size: 20px;
+                color: rgb(39, 39, 39);
+            }
+
+            .purchase-btn {
+                background-color: rgba(142, 68, 173, 0.1490196078);
+                color: #8e44ad;
+                font-size: 12px;
+                font-weight: 600 !important;
+                border: none;
+                border-radius: 21px;
+                padding: 5px 14px;
+                height: auto;
+                margin-top: 10px;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: #8e44ad;
+                    color: #fff;
+                }
+            }
+            .already-purchase-btn{
+                background-color: #6d6d6d29;
+                color: #000;
+                &:hover{
+                    background-color: #6d6d6d29;
+                color: #000
+                }
+            }
+        }
+    }
+}

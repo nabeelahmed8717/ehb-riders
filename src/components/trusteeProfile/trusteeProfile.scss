@@ -1,0 +1,46 @@
+.trustee-profile-main {
+    .card-trustee-wallet {
+        background-color: #8e44ad;
+        width: 40vw;
+        border-radius: 20px;
+        padding: 20px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        p {
+            color: aliceblue;
+            margin-left: 14px;
+        }
+
+        h2 {
+            color: aliceblue;
+            margin-left: 14px;
+        }
+
+        .tw-profile {
+            background-color: #80359f;
+            width: 100%;
+            padding: 9px 15px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .with-drawl-btn {
+            background-color: #80359f;
+            color: #fff;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}
