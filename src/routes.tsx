@@ -37,6 +37,7 @@ const Chat = Loadable(lazy(() => import("./pages/chat")));
 
 const Packages = Loadable(lazy(() => import("./pages/sqPackages")));
 const TrusteeProfile = Loadable(lazy(() => import("./pages/trusteeProfile")));
+const RidersProfile = Loadable(lazy(() => import("./pages/ridersProfile")));
 
 const OrdersRequests = Loadable(lazy(() => import("./pages/ordersRequests")));
 const Marketing = Loadable(lazy(() => import("./pages/marketing")));
@@ -79,6 +80,10 @@ export const routes: any = [
       {
         path: "trustee-profile",
         element: <TrusteeProfile />,
+      },
+      {
+        path: "rider-profile",
+        element: <RidersProfile />,
       }
     ],
   },

@@ -18,7 +18,7 @@ import verificationIcon from "../../assets/icons/check-circle.svg"
 import analysisIcon from "../../assets/icons/analysis.svg"
 import guideIcon from "../../assets/icons/memo-pad.svg"
 import manageUsersIcon from "../../assets/icons/user-gear.svg"
-import userQuriesIcon from "../../assets/icons/question-square.svg"
+import userIcon from "../../assets/icons/user.svg"
 
 import {
   AppstoreOutlined,
@@ -58,6 +58,7 @@ const SideBar = () => {
   const items: MenuItem[] = [
     getItem(<div onClick={() => navigate('./home')}>Dashboard</div>, '1', <PieChartOutlined />),
     getItem(<div onClick={() => navigate('./orders-requests')}>Orders Requests</div>, '2', <img src={marketingIcon} width={15} height={15} alt="" />),
+    getItem(<div onClick={() => navigate('./rider-profile')}>Rider Profile</div>, '5', <img src={userIcon} width={15} height={15} alt="" />),
     getItem(<div onClick={() => navigate('./packages')} >Packages</div>, '3', <img src={packagesIcon} width={15} height={15} alt="" />),
     getItem(<div onClick={() => navigate('./marketing')}>Marketing</div>, '4', <img src={marketingIcon} width={15} height={15} alt="" />),
     getItem(<div>Reports</div>, '11', <img src={analysisIcon} width={15} height={15} alt="" />),
