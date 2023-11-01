@@ -3,35 +3,25 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import "./navBar.scss"
 
-import brandLogoW from "../../assets/brandAssets/brand-logo-fr-white.svg"
-import brandLogoB from "../../assets/brandAssets/brand-logo-fr-black.svg"
-import homeIcon from "../../assets/icons/home.svg"
-import bookings from "../../assets/icons/fi-rs-notebook.svg"
 import chat from "../../assets/icons/fi-rr-comment.svg"
-import services from "../../assets/icons/stars.svg"
 import menu from "../../assets/icons/fi-rr-menu-burger.svg"
-import cart from "../../assets/icons/cart.svg"
+import RedirectionModals from '../../shared/redirectionModals/redirectionModals'
 
+import UserProfileCard from './userProfileCard/userProfileCard';
 import userIcon from "../../assets/raw/userIconOne.svg"
 import document from "../../assets/icons/document.svg"
-import settings from "../../assets/icons/fi-rs-settings.svg"
 import signOut from "../../assets/icons/fi-rs-sign-out.svg"
 
-import orderIcon from "../../assets/icons/orders.svg"
-import productsIcon from "../../assets/icons/products.svg"
-import settingsIcon from "../../assets/icons/settings.svg"
 import packagesIcon from "../../assets/icons/packages.svg"
 import marketingIcon from "../../assets/icons/marketing.svg"
-import verificationIcon from "../../assets/icons/check-circle.svg"
-import analysisIcon from "../../assets/icons/analysis.svg"
 import userCheck from "../../assets/icons/user-check.svg"
 import userProfile from "../../assets/icons/user-gear.svg"
 
 import Switch from "../../assets/icons/fi-rr-refresh.svg"
 import notificationIcon from "../../assets/icons/notification.svg"
+import pssIcon from "../../assets/icons/ehb-companies/companies-logos/pss.svg"
 
 import { CloseOutlined } from '@ant-design/icons';
-import UserProfileCard from './userProfileCard/userProfileCard';
 
 const NavBar = () => {
 
@@ -40,6 +30,8 @@ const NavBar = () => {
     const routeArray = route.split('/');
 
     console.log("routeArray", routeArray)
+
+    const [isProfileRedirection, setIsProfileRedirection] = useState(false)
 
     const [isAuthenticated, setIsAuthenticated] = useState(true)
     const [isDrawerOpen, setisDrawerOpen] = useState(false);
@@ -65,7 +57,7 @@ const NavBar = () => {
         {
             key: '3',
             label: (
-                <div className="drp-items-nav" >
+                <div className="drp-items-nav" onClick={() => setIsProfileRedirection(true)} >
                     <img src={userProfile} alt="" /> <p>Manage Profile</p>
                 </div>
             ),
@@ -105,8 +97,8 @@ const NavBar = () => {
     ]
 
     const respMenuItems = [
-       
-       
+
+
         {
             key: '2',
             label: 'Marketing',
@@ -125,7 +117,7 @@ const NavBar = () => {
             icon: packagesIcon,
             link: './packages'
         },
-       
+
         {
             key: '3',
             label: 'Switch Dashboards',
@@ -230,7 +222,7 @@ const NavBar = () => {
                         <UserProfileCard isMobile={isMobile} />
                         {
                             respMenuItems.map((item: any) => (
-                                <div className="drp-items-nav" onClick={() => { item.link && navigate(`${item.link}`); setisDrawerOpen(false)  }} style={{ marginTop: '10px' }} key={item.key}>
+                                <div className="drp-items-nav" onClick={() => { item.link && navigate(`${item.link}`); setisDrawerOpen(false) }} style={{ marginTop: '10px' }} key={item.key}>
                                     <img src={item.icon} alt="" /> <p>{item.label}</p>
                                 </div>
                             ))
@@ -246,7 +238,17 @@ const NavBar = () => {
             }
 
 
-
+            <RedirectionModals
+                title="Manage Profiles"
+                icon={pssIcon}
+                iconTitle='PSS'
+                iconDisp='Personal Security Service'
+                message="Profiles are managed by EHB PSS (Personal Security Service)"
+                confirmationMsg='Are you sure to redirect to PSS ?'
+                modalOpen={isProfileRedirection}
+                setIsModalOpen={setIsProfileRedirection}
+                navigation="https://pss-ehb.vercel.app/user-Profile"
+            />
         </div>
     )
 }

@@ -32,7 +32,7 @@ const RidersProfile = () => {
     
 
     return (
-        <div className='orders-req-main bx-bg--white border-repel card-shadow'>
+        <div className='rider-profile-main bx-bg--white border-repel card-shadow'>
             <div className="common-head-wrapper-title">
                 <div style={{ display: 'flex', justifyContent: "space-between" }}>
                     <h3>Rider's Profile</h3>
